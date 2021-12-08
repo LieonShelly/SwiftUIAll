@@ -29,5 +29,15 @@ class AllSwiftUITests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    @Converter(initialValue: "100", from: "USD", to: "CNY", rate: 6.88)
+    var usd_cny
+    
+    @Converter(initialValue: "100", from: "CNY", to: "EUR", rate: 0.13)
+    var cny_eur
 
+    func testPropertyWrapper() {
+        print("\(usd_cny) = \($usd_cny)") // wrappedValue = projectedValue
+        print("\(cny_eur) = \($cny_eur)")
+    }
 }

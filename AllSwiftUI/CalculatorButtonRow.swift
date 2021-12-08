@@ -10,6 +10,8 @@ import SwiftUI
 
 struct CalculatorButtonRow: View {
     let row: [CalculatorButtonItem]
+//    @Binding var brain: CalculatorBrain
+    var model: CalculatorModel
     
     var body: some View {
         HStack {
@@ -20,6 +22,7 @@ struct CalculatorButtonRow: View {
                     backgroundColorName: item.backgroundColorName)
                 {
                     print(item.title)
+                    self.model.apply(item)
                 }
             }
         }

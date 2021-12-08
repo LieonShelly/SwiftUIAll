@@ -7,23 +7,24 @@
 
 import SwiftUI
 
-/**
- # view modifier 分为两种类别:
- -  像是 font，foregroundColor 这样定义在具体类型 (比如例中的 Text) 上，然 后返回同样类型 (Text) 的原地 modifier。
- - 像是 padding，background 这样定义在 View extension 中，将原来的 View 进行包装并返回新的 View 的封装类 modifier。
- 
- */
-
 struct ContentView: View {
     let scale: CGFloat = UIScreen.main.bounds.width / 414
+    //    @State private var brain: CalculatorBrain = .left("0")
+    @ObservedObject var model = CalculatorModel()
+    @State private var editingHistory = false
     
     var body: some View {
         VStack(spacing: 12) {
             Spacer() // 把屏幕占满
-            Text("0")
+            Text(model.brain.output)
                 .font(.system(size: 76))
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .trailing)
-            CalculatorButtonPad()
+            Button("操作履历: \(model.history.count)") {
+                self.editingHistory = true
+            }.sheet(isPresented: $editingHistory) {
+                HistoryView(model: self.model)
+            }
+            CalculatorButtonPad(model: self.model)
         }
         .scaleEffect(scale)
     }
@@ -41,3 +42,24 @@ struct ContentView_Previews: PreviewProvider {
 
 
 
+struct HistoryView: View {
+    @ObservedObject var model: CalculatorModel
+    
+    var body: some View {
+        VStack {
+            if model.totalCount == 0 {
+                Text("没有履历")
+            } else {
+                HStack {
+                    Text("履历").font(.headline)
+                    Text("\(model.historyDetail)").lineLimit(nil)
+                }
+                HStack {
+                    Text("显示").font(.headline)
+                    Text("\(model.brain.output)")
+                }
+                Slider(value: $model.slidingIndex, in: 0...Float(model.totalCount), step: 1)
+            }
+        }.padding()
+    }
+}
