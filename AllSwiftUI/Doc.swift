@@ -37,6 +37,42 @@ import Foundation
   # SecureField
   # Button
   # NavigationView
+  
+  
+  # Combine
+   - 异步编程的本质是响应未来发生的事件流。
+  - 我们可以将 “状态变化” 看作是被发布出来的异步操作的事件，订阅这个事件，并对 订阅了事件的 View 根据更新后的状态进行绘制，这就是 SwiftUI 的核心逻辑。
+  
+  在响应式异步编程中，一个事件及其 对应的数据被发布出来，最后被订阅者消化和使用。期间这些事件和数据需要通过 一系列操作变形，成为我们最终需要的事件和数据。Combine 中最重要的角色有三 种，恰好对应了这三种操作:负责发布事件的 Publisher，负责订阅事件的 Subscriber，以及负责转换事件和数据的 Operator。
+  
+  ## Publisher
+  
+  有限事件流和无限事件流
+  虽然 Publisher 可以发布三种事件，但是它们并不是必须的。一个 Publisher 可能发 出一个或多个 output 值，也可能一个值都不发出;Publisher 有可能永远不会停止 终结，也有可能通过 failure 或者 finished 事件来表明不再会发出新的事件。我们将 最终会终结的事件流称为有限事件流，而将不会发出 failure 或者 finished 的事件流 称为无限事件流。
+  
+  Publisher 可以发布三种事件:
+  1. 类型为 Output 的新值:这代表事件流中出现了新的值。
+  2. 类型为 Failure 的错误:这代表事件流中发生了问题，事件流到此终止。 3. 完成事件:表示事件流中所有的元素都已经发布结束，事件流到此终止
+  
+  ## Operator
+  
+  在响应式编程中，绝大部分的逻辑和关键代码的编写，都发生在数据处理和变形中。 每个 Operator 的行为模式都一样:它们使用上游 Publisher 所发布的数据作为输入， 以此产生的新的数据，然后自身成为新的 Publisher，并将这些新的数据作为输出， 发布给下游。
+  
+  ## Subscriber
+  - Combine 中也定义了几个比较常见的 Subscriber，我们承接上面的按钮的例子来进 行说明。在上面，我们通过 scan 和 map，对 buttonClicked 进行了变形，将它从一 个不含数据的按钮事件流，转变为了以 String 表示的按钮按下次数的计数。如果我 们想要订阅和使用这些值，可以使用 sink:
+
+- assign assign 接受一个 class 对象以及对 象类型上的某个键路径 (key path)。每当 output 事件到来时，其中包含的值就将被 设置到对应的属性上去:
+  
+  
+  Subject
+  Subject 本身也是一个 Publisher:
+
+  PassthroughSubject 并不会对接受到的值进行保留，当订阅开始后，它将监听并响 应接下来的事件
+  
+  和 PassthroughSubject 不同，CurrentValueSubject 则会包装和持有一个值，并在 设置该值时发送事件并保留新的值。在订阅发生的瞬间，CurrentValueSubject 会把 当前保存的值发送给订阅者。
+  
+  Scheduler
+  如果说 Publisher 决定了发布怎样的 (what) 事件流的话，Scheduler 所要解决的就 是两个问题:在什么地方 (where)，以及在什么时候 (when) 来发布事件和执行代码。
   */
 
  */
