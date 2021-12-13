@@ -8,6 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var body: some View {
+        SettingRootView()
+    }
+}
+
+struct PokemonListContentView: View {
+    let scale: CGFloat = UIScreen.main.bounds.width / 414
+    @ObservedObject var model = CalculatorModel()
+    @State private var editingHistory = false
+    
+    var body: some View {
+        NavigationView {
+            PokemonList()
+                .navigationTitle("Pokemon")
+        }
+        
+    }
+}
+
+struct CaculatorContentView: View {
     let scale: CGFloat = UIScreen.main.bounds.width / 414
     //    @State private var brain: CalculatorBrain = .left("0")
     @ObservedObject var model = CalculatorModel()
