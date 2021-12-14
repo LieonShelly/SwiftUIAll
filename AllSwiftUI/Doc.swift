@@ -74,5 +74,9 @@ import Foundation
   Scheduler
   如果说 Publisher 决定了发布怎样的 (what) 事件流的话，Scheduler 所要解决的就 是两个问题:在什么地方 (where)，以及在什么时候 (when) 来发布事件和执行代码。
   */
+ 
+ - 从哪里来
+ - 到那里去
 
+ Publisher 中的 zip 和 Sequence 的 zip 相类似:它会把两个 (或多个) Publisher 事 件序列中在同一 index 位置上的值进行合并，也就是说，Publisher1 中的第一个事 件和 Publisher2 中的第一个事件结对合并，Publisher1 中的第二个事件和 Publisher2 中的第二个事件合并，以此类推:
  */
