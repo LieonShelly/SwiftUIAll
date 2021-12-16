@@ -34,6 +34,12 @@ extension AppState {
         
         var loginUser: User? = nil
         
+        var loginRequesting = false
+        var loginError: AppError?
+        
+//        var checker = AccountChecker()
+
+        var isEmailValid: Bool = false
     }
 }
 
