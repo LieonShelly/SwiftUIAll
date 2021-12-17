@@ -84,4 +84,5 @@ import Foundation
  ## 通过 assign 绑定 Publisher 值
     - 除了 Subscribers.Sink 以外，Combine 里还有另一个内建的 Subscriber: Subscribers.Assign，它可以用来将 Publisher 的输出值通过 key path 绑定到一个 对象的属性上去。在 SwiftUI 中，这种值通常会是 ObservableObject 中的属性值， 它进一步会被用来驱动 View 的更新
  ## Cancellable, AnyCancellable 和内存管理
+ # propertyWrapper
  */

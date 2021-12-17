@@ -19,21 +19,19 @@ struct SettingRootView: View {
 struct SettingView: View {
     
     @EnvironmentObject var store: Store
-    
     var settingsBinding: Binding<AppState.Settings> {
         $store.appState.settings
     }
-    
     var setting: AppState.Settings {
         store.appState.settings
     }
-    
     var body: some View {
         Form {
             accountSection
             optionSection
             actionSection
-        }.alert(item: settingsBinding.loginError) { error in
+        }
+        .alert(item: settingsBinding.loginError) { error in
             Alert(title: Text(error.localizedDescription))
         }
         
@@ -51,9 +49,9 @@ struct SettingView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                TextField("电子邮箱", text: "")
+                TextField("电子邮箱", text: settingsBinding.email)
                     .foregroundColor(setting.isEmailValid ? .green : .red)
-                SecureField("密码", text: "")
+                SecureField("密码", text: settingsBinding.password)
                 if setting.loginRequesting {
                     Text("登录中...")
                 } else {
