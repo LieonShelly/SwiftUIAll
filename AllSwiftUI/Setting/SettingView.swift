@@ -19,12 +19,14 @@ struct SettingRootView: View {
 struct SettingView: View {
     
     @EnvironmentObject var store: Store
+    
     var settingsBinding: Binding<AppState.Settings> {
         $store.appState.settings
     }
     var setting: AppState.Settings {
         store.appState.settings
     }
+    
     var body: some View {
         Form {
             accountSection
@@ -49,20 +51,23 @@ struct SettingView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                TextField("电子邮箱", text: settingsBinding.email)
+                TextField("电子邮箱", text: settingsBinding.checker.email)
                     .foregroundColor(setting.isEmailValid ? .green : .red)
-                SecureField("密码", text: settingsBinding.password)
+                SecureField("密码", text: settingsBinding.checker.password)
                 if setting.loginRequesting {
                     Text("登录中...")
                 } else {
                     Button(setting.accountBehavior.text) {
                         self.store.dispatch(
-                            .login(email: self.setting.email, password: self.setting.password)
+                            .login(email: self.setting.checker.email, password: self.setting.checker.password)
                         )
                     }
                 }
             } else {
-                
+                Text(setting.loginUser!.email)
+                Button("注销") {
+                    self.store.dispatch(.logout)
+                }
             }
             
         }

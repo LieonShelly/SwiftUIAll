@@ -15,7 +15,7 @@ class Store: ObservableObject {
         var appCommand: AppCommand?
         switch action {
         case .login(let email, let password):
-            guard appState.settings.loginRequesting else {
+            guard !appState.settings.loginRequesting else {
                 break
             }
             appState.settings.loginRequesting = true
@@ -28,8 +28,25 @@ class Store: ObservableObject {
             case .failure(let error):
                 appState.settings.loginError = error
             }
-        default:
-            break
+        case .logout:
+            appState.settings.loginUser = nil
+        case .emailValid(valid: let valid):
+            appState.settings.isEmailValid = valid
+        case .loadPokemons:
+            if appState.pokemonList.loadingPokemons {
+                break
+            }
+            appState.pokemonList.loadingPokemons = true
+            appCommand = LoadPokemonsCommand()
+        case .loadPokemonsDone(result: let result):
+            switch result {
+            case .success(let models):
+                appState.pokemonList.pokemons = Dictionary(
+                    uniqueKeysWithValues: models.map { ($0.id, $0)}
+                )
+            case .failure(let error):
+                print(error)
+            }
         }
         return (appState, appCommand)
     }

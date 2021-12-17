@@ -11,8 +11,8 @@ import SwiftUI
 struct AllSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-//            MainTab().environmentObject(Store())
-            CaculatorContentView()
+            MainTab().environmentObject(Store())
+//            CaculatorContentView()
         }
     }
 }
