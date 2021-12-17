@@ -43,7 +43,7 @@ struct SettingView: View {
         Section(header: Text("账户")) {
             if setting.loginUser == nil {
                 Picker(
-                    selection: settingsBinding.accountBehavior,
+                    selection: settingsBinding.checker.accountBehavior,
                     label: Text(""))
                 {
                     ForEach(AppState.Settings.AccountBehavior.allCases, id: \.self) {
@@ -57,7 +57,7 @@ struct SettingView: View {
                 if setting.loginRequesting {
                     Text("登录中...")
                 } else {
-                    Button(setting.accountBehavior.text) {
+                    Button(setting.checker.accountBehavior.text) {
                         self.store.dispatch(
                             .login(email: self.setting.checker.email, password: self.setting.checker.password)
                         )

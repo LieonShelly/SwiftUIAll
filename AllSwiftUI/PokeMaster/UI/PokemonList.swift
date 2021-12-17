@@ -9,9 +9,20 @@ import Foundation
 import SwiftUI
 
 struct PokemonRootView: View {
+    
+    @EnvironmentObject
+    var store: Store
+    
     var body: some View {
         NavigationView {
-            PokemonList().navigationBarTitle("宝可梦列表")
+            if store.appState.pokemonList.pokemons == nil {
+                Text("Loading").onAppear {
+                    self.store.dispatch(.loadPokemons)
+                }
+            } else {
+                PokemonList()
+                    .navigationBarTitle("宝可梦列表")
+            }
         }
     }
 }
@@ -24,22 +35,15 @@ struct PokemonListRoot_Previews: PreviewProvider {
 
 
 struct PokemonList: View {
+    @EnvironmentObject
+    var store: Store
     @State var expandingIndex: Int?
-    @State var searchText: String = ""
     
     var body: some View {
         ScrollView {
             LazyVStack {
-                TextField("Seacrh", text: $searchText)
-                    .textInputAutocapitalization(.never)
-                    .disableAutocorrection(true)
-                    .border(.secondary)
-                    .padding()
-                    .onSubmit {
-                        
-                    }
                 
-                ForEach(PokemonViewModel.all) {pokemon in
+                ForEach(store.appState.pokemonList.allPokemonsByID) {pokemon in
                     PokemonInfoRow(
                         model: pokemon,
                         expanded: self.expandingIndex == pokemon.id
@@ -63,11 +67,11 @@ struct PokemonList: View {
                 }
             }
         }
-        .overlay(
-            VStack {
-                Spacer()
-                PokemonInfoPanel(model: .sample(id: 1))
-            }.edgesIgnoringSafeArea(.bottom)
-        )
+//        .overlay(
+//            VStack {
+//                Spacer()
+//                PokemonInfoPanel(model: .sample(id: 1))
+//            }.edgesIgnoringSafeArea(.bottom)
+//        )
     }
 }

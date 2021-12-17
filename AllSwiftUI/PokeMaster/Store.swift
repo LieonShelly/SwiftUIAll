@@ -6,9 +6,23 @@
 //
 
 import Foundation
+import Combine
 
 class Store: ObservableObject {
     @Published var appState = AppState()
+    private var disposeBag = Set<AnyCancellable>()
+    
+    init() {
+        setupObservers()
+    }
+    
+    func setupObservers() {
+        appState.settings.checker.isEmailValid
+            .sink { isValid in
+                self.dispatch(.emailValid(valid: isValid))
+            }
+            .store(in: &disposeBag)
+    }
     
     static func reduce(state: AppState, action: AppAction) -> (AppState, AppCommand?) {
         var appState = state
