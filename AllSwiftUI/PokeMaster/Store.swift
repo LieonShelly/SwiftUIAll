@@ -54,13 +54,14 @@ class Store: ObservableObject {
             appState.pokemonList.loadingPokemons = true
             appCommand = LoadPokemonsCommand()
         case .loadPokemonsDone(result: let result):
+            appState.pokemonList.loadingPokemons = false
             switch result {
             case .success(let models):
                 appState.pokemonList.pokemons = Dictionary(
                     uniqueKeysWithValues: models.map { ($0.id, $0)}
                 )
-            case .failure(let error):
-                print(error)
+            case .failure:
+                appState.pokemonList.loadFail = true
             }
         case .register(email: let email, password: let password, verifyPassword: let verifyPassword):
             guard !appState.settings.registerRequesting else  {
@@ -68,6 +69,11 @@ class Store: ObservableObject {
             }
             appState.settings.registerRequesting = true
             appCommand = RegisterCommand(email: email, password: password, verifyPassword: verifyPassword)
+        case .clearCache:
+            appCommand = ClearCacheCommand()
+        case .clearCacheDone:
+            appState.pokemonList.pokemons = nil
+            break
         }
         return (appState, appCommand)
     }

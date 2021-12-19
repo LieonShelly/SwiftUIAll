@@ -94,3 +94,11 @@ struct RegisterCommand: AppCommand {
             .seal(in: token)
     }
 }
+
+struct ClearCacheCommand: AppCommand {
+    
+    func execute(in store: Store) {
+        try? FileHelper.delete(from: .cachesDirectory, fileName: "pokemons.json")
+        store.dispatch(.clearCacheDone)
+    }
+}

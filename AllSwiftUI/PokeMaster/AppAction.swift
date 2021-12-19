@@ -16,4 +16,7 @@ enum AppAction {
     case loadPokemons
     case loadPokemonsDone(result: Result<[PokemonViewModel], AppError>)
     case register(email: String, password: String, verifyPassword: String)
+    // 清空缓存 -> 数据列表为空 -> 页面刷新为try -> 点击try触发下载
+    case clearCache
+    case clearCacheDone
 }

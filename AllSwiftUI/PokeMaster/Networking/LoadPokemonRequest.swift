@@ -28,6 +28,8 @@ struct LoadPokemonRequest {
     private func pokemonPublisher(_ id: Int) -> AnyPublisher<Pokemon, Error> {
         URLSession.shared
             .dataTaskPublisher(for: URL(string: "https://pokeapi.co/api/v2/pokemon/\(id)")!)
+            .mapError { AppError.networkingFailed($0)}
+            .print()
             .map { $0.data }
             .decode(type: Pokemon.self, decoder: appDecoder)
             .eraseToAnyPublisher()
