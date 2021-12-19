@@ -36,6 +36,7 @@ class Store: ObservableObject {
             appCommand = LoginAppCommand(email: email, password: password)
         case .accountBehaviorDone(result: let result):
             appState.settings.loginRequesting = false
+            appState.settings.registerRequesting = false
             switch result {
             case .success(let user):
                 appState.settings.loginUser = user
@@ -61,6 +62,12 @@ class Store: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+        case .register(email: let email, password: let password, verifyPassword: let verifyPassword):
+            guard !appState.settings.registerRequesting else  {
+                break
+            }
+            appState.settings.registerRequesting = true
+            appCommand = RegisterCommand(email: email, password: password, verifyPassword: verifyPassword)
         }
         return (appState, appCommand)
     }

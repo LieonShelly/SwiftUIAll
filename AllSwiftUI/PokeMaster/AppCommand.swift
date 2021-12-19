@@ -63,3 +63,34 @@ struct LoadPokemonsCommand: AppCommand {
             .seal(in: token)
     }
 }
+
+struct RegisterCommand: AppCommand {
+    let email: String
+    let password: String
+    let verifyPassword: String
+    
+    func execute(in store: Store) {
+        let token = SubscriptionToken()
+        
+        store.appState.settings.checker.emailCanRegister
+            .filter { can in
+                if !can {
+                    store.dispatch(.accountBehaviorDone(result: .failure(.emailExist)))
+                }
+                return can == true
+            }
+            .flatMap { _ in
+                RegisterRequest(email: email, password: password, verifyPassword: verifyPassword)
+                    .publisher
+            }
+            .sink(receiveCompletion: { complete in
+                if case .failure(let error) = complete {
+                    store.dispatch(.accountBehaviorDone(result: .failure(error)))
+                }
+                token.unseal()
+            }, receiveValue: { user in
+                store.dispatch(.accountBehaviorDone(result: .success(user)))
+            })
+            .seal(in: token)
+    }
+}

@@ -36,7 +36,6 @@ struct SettingView: View {
         .alert(item: settingsBinding.loginError) { error in
             Alert(title: Text(error.localizedDescription))
         }
-        
     }
     
     var accountSection: some View {
@@ -51,18 +50,44 @@ struct SettingView: View {
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
-                TextField("电子邮箱", text: settingsBinding.checker.email)
-                    .foregroundColor(setting.isEmailValid ? .green : .red)
-                SecureField("密码", text: settingsBinding.checker.password)
-                if setting.loginRequesting {
-                    Text("登录中...")
+                
+                if setting.checker.accountBehavior == .register {
+                    TextField("电子邮箱", text: settingsBinding.checker.email)
+                        .foregroundColor(setting.isEmailValid ? .green : .red)
+                    SecureField("密码", text: settingsBinding.checker.password)
+                    SecureField("确认密码", text: settingsBinding.checker.verifyPassword)
+                    if setting.registerRequesting {
+                        Text("注册中...")
+                    } else {
+                        Button(setting.checker.accountBehavior.text) {
+                            self.store.dispatch(
+                                .register(
+                                    email: setting.checker.email,
+                                    password: setting.checker.password,
+                                    verifyPassword: setting.checker.verifyPassword
+                                )
+                            )
+                        }
+                    }
                 } else {
-                    Button(setting.checker.accountBehavior.text) {
-                        self.store.dispatch(
-                            .login(email: self.setting.checker.email, password: self.setting.checker.password)
-                        )
+                    TextField("电子邮箱", text: settingsBinding.checker.email)
+                        .foregroundColor(setting.isEmailValid ? .green : .red)
+                    SecureField("密码", text: settingsBinding.checker.password)
+                    if setting.loginRequesting {
+                        Text("登录中...")
+                    } else {
+                        Button(setting.checker.accountBehavior.text) {
+                            self.store.dispatch(
+                                .login(
+                                    email: self.setting.checker.email,
+                                    password: self.setting.checker.password
+                                )
+                            )
+                        }
                     }
                 }
+                
+                
             } else {
                 Text(setting.loginUser!.email)
                 Button("注销") {
