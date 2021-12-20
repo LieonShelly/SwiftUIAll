@@ -71,11 +71,8 @@ struct PokemonList: View {
                                 )
                             )
                             {
-                                if self.store.appState.pokemonList.expandingIndex == pokemon.id {
-                                    self.store.appState.pokemonList.expandingIndex = nil
-                                } else {
-                                    self.store.appState.pokemonList.expandingIndex = pokemon.id
-                                }
+                                self.store.dispatch(.toggleListSelection(index: pokemon.id))
+                                self.store.dispatch(.loadAbilities(pokemon: pokemon.pokemon))
                             }
                         }
                 }

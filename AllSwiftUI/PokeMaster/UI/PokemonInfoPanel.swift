@@ -9,9 +9,11 @@ import Foundation
 import SwiftUI
 
 struct PokemonInfoPanel: View {
+    @EnvironmentObject var store: Store
     let model: PokemonViewModel
-    var abilities: [AbilityViewModel] {
-        AbilityViewModel.sample(pokemonID: model.id)
+    
+    var abilities: [AbilityViewModel]? {
+        store.appState.pokemonList.abilityViewModels(for: model.pokemon)
     }
     
     @State
@@ -33,13 +35,15 @@ struct PokemonInfoPanel: View {
     var body: some View {
         VStack(spacing: 20) {
             topIndicator
-            Header(model: model)
-            pokemonDescription
-            Divider()
-            AbilityList(
-                model: model,
-                abilityModels: abilities
-            )
+            Group {
+                Header(model: model)
+                pokemonDescription
+                Divider()
+                AbilityList(
+                    model: model,
+                    abilityModels: abilities
+                )
+            }
         }
         .padding(
             EdgeInsets(

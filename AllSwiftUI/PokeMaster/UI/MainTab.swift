@@ -27,7 +27,6 @@ struct MainTab: View {
                 Image(systemName: "list.bullet.below.rectangle")
                 Text("列表")
             }
-            
             SettingRootView().tabItem {
                 Image(systemName: "gear")
                 Text("设置")

@@ -12,7 +12,7 @@ struct PokemonInfoRow: View {
     let model: PokemonViewModel
     @EnvironmentObject var store: Store
     var expanded: Bool
-    
+
     var body: some View {
         VStack {
             HStack {
