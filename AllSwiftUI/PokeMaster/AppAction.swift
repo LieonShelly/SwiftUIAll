@@ -19,4 +19,7 @@ enum AppAction {
     // 清空缓存 -> 数据列表为空 -> 页面刷新为try -> 点击try触发下载
     case clearCache
     case clearCacheDone
+    
+    case toggleListSelection(index: Int?)
+    case togglePanelPresenting(presenting: Bool)
 }

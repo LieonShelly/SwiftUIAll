@@ -74,6 +74,18 @@ class Store: ObservableObject {
         case .clearCacheDone:
             appState.pokemonList.pokemons = nil
             break
+        case .toggleListSelection(index: let index):
+            let expanding = appState.pokemonList.selectionState.expandingIndex
+            if expanding == index {
+                appState.pokemonList.selectionState.expandingIndex = nil
+                appState.pokemonList.selectionState.panelPresented = false
+            } else {
+                appState.pokemonList.selectionState.expandingIndex = index
+                appState.pokemonList.selectionState.panelIndex = index
+            }
+
+        case .togglePanelPresenting(presenting: let presenting):
+            appState.pokemonList.selectionState.panelPresented = presenting
         }
         return (appState, appCommand)
     }
