@@ -100,6 +100,8 @@ class Store: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+        case .closeSafariView:
+            appState.pokemonList.isSFViewActive = false
         }
         return (appState, appCommand)
     }

@@ -273,4 +273,11 @@ class AllSwiftUITests: XCTestCase {
         wrapper.text = "abc"
 
     }
+    
+    func testPassthoughSubject() {
+        let subject = PassthroughSubject<String, Never>()
+        subject.send("1")
+        subject.send("2")
+        subject.eraseToAnyPublisher()
+    }
 }

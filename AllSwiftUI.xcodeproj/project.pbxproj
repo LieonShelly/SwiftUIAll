@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F80F0CC0276DA31800784AFC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F80F0CBF276DA31800784AFC /* Kingfisher */; };
+		F81C7084276DA5A600D52434 /* FRAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F81C7083276DA5A600D52434 /* FRAuth */; };
+		F81C7086276DA5A600D52434 /* FRAuthenticator in Frameworks */ = {isa = PBXBuildFile; productRef = F81C7085276DA5A600D52434 /* FRAuthenticator */; };
+		F81C7088276DA5A600D52434 /* FRCore in Frameworks */ = {isa = PBXBuildFile; productRef = F81C7087276DA5A600D52434 /* FRCore */; };
+		F81C708A276DA5A600D52434 /* FRFacebookSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F81C7089276DA5A600D52434 /* FRFacebookSignIn */; };
+		F81C708C276DA5A600D52434 /* FRProximity in Frameworks */ = {isa = PBXBuildFile; productRef = F81C708B276DA5A600D52434 /* FRProximity */; };
+		F81C708E276DA5A600D52434 /* FRUI in Frameworks */ = {isa = PBXBuildFile; productRef = F81C708D276DA5A600D52434 /* FRUI */; };
+		F81C7090276DC7A400D52434 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C708F276DC7A400D52434 /* RegisterRequest.swift */; };
+		F87A017E276B8C9500D13197 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A017D276B8C9500D13197 /* Store.swift */; };
+		F87A0180276B92AB00D13197 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A017F276B92AB00D13197 /* User.swift */; };
+		F87A0182276B944F00D13197 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A0181276B944F00D13197 /* AppAction.swift */; };
+		F87A0184276B988A00D13197 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A0183276B988A00D13197 /* LoginRequest.swift */; };
+		F87A0186276B98D400D13197 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A0185276B98D400D13197 /* AppError.swift */; };
+		F87A0188276B99CF00D13197 /* AppCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87A0187276B99CF00D13197 /* AppCommand.swift */; };
 		F886EDF3275F2C8D002B1774 /* AllSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F886EDF2275F2C8D002B1774 /* AllSwiftUIApp.swift */; };
 		F886EDF5275F2C8D002B1774 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F886EDF4275F2C8D002B1774 /* ContentView.swift */; };
 		F886EDF7275F2C8F002B1774 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F886EDF6275F2C8F002B1774 /* Assets.xcassets */; };
@@ -90,10 +104,18 @@
 		F893F9852767802A00C2635C /* PokemonInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893F9842767802A00C2635C /* PokemonInfoPanel.swift */; };
 		F893F98827678C8A00C2635C /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893F98727678C8A00C2635C /* SettingView.swift */; };
 		F893F98A27678C9500C2635C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F893F98927678C9500C2635C /* Settings.swift */; };
+		F8B1881C276F939500386A1B /* OverLayerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1881B276F939500386A1B /* OverLayerSheet.swift */; };
+		F8B1881E277033FA00386A1B /* LoadAbilityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B1881D277033FA00386A1B /* LoadAbilityRequest.swift */; };
+		F8D66004276C615800A00606 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66003276C615800A00606 /* FileStorage.swift */; };
+		F8D66009276CCB2D00A00606 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D66008276CCB2D00A00606 /* AppState.swift */; };
+		F8D6600C276CCBA400A00606 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6600B276CCBA400A00606 /* EmailCheckingRequest.swift */; };
+		F8D6600E276CD7A600A00606 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6600D276CD7A600A00606 /* LoadPokemonRequest.swift */; };
 		F8D81752275FB60D0044E115 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D81751275FB60D0044E115 /* CalculatorButton.swift */; };
 		F8D81754275FB77F0044E115 /* CalculatorButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D81753275FB77F0044E115 /* CalculatorButtonItem.swift */; };
 		F8D81756275FBAC80044E115 /* CalculatorButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D81755275FBAC80044E115 /* CalculatorButtonRow.swift */; };
 		F8D81758275FBBB70044E115 /* CalculatorButtonPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D81757275FBBB70044E115 /* CalculatorButtonPad.swift */; };
+		F8D83DD72771A86600B3F99C /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D83DD62771A86600B3F99C /* SafariView.swift */; };
+		F8D9B739276A4B8700A880C6 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D9B738276A4B8700A880C6 /* MainTab.swift */; };
 		F8DCF1832768F001009A7F3F /* CombinePlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCF1822768F001009A7F3F /* CombinePlayground.swift */; };
 		F8FA24C527610056004B8D2D /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA24C427610056004B8D2D /* CalculatorBrain.swift */; };
 		F8FA24C727610095004B8D2D /* Doc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FA24C627610095004B8D2D /* Doc.swift */; };
@@ -118,6 +140,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F81C708F276DC7A400D52434 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		F87A017D276B8C9500D13197 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F87A017F276B92AB00D13197 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F87A0181276B944F00D13197 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		F87A0183276B988A00D13197 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		F87A0185276B98D400D13197 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		F87A0187276B99CF00D13197 /* AppCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCommand.swift; sourceTree = "<group>"; };
 		F886EDEF275F2C8D002B1774 /* AllSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F886EDF2275F2C8D002B1774 /* AllSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSwiftUIApp.swift; sourceTree = "<group>"; };
 		F886EDF4275F2C8D002B1774 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -204,10 +233,18 @@
 		F893F9842767802A00C2635C /* PokemonInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfoPanel.swift; sourceTree = "<group>"; };
 		F893F98727678C8A00C2635C /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F893F98927678C9500C2635C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		F8B1881B276F939500386A1B /* OverLayerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverLayerSheet.swift; sourceTree = "<group>"; };
+		F8B1881D277033FA00386A1B /* LoadAbilityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAbilityRequest.swift; sourceTree = "<group>"; };
+		F8D66003276C615800A00606 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		F8D66008276CCB2D00A00606 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		F8D6600B276CCBA400A00606 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
+		F8D6600D276CD7A600A00606 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
 		F8D81751275FB60D0044E115 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		F8D81753275FB77F0044E115 /* CalculatorButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonItem.swift; sourceTree = "<group>"; };
 		F8D81755275FBAC80044E115 /* CalculatorButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonRow.swift; sourceTree = "<group>"; };
 		F8D81757275FBBB70044E115 /* CalculatorButtonPad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonPad.swift; sourceTree = "<group>"; };
+		F8D83DD62771A86600B3F99C /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
+		F8D9B738276A4B8700A880C6 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		F8DCF1822768F001009A7F3F /* CombinePlayground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinePlayground.swift; sourceTree = "<group>"; };
 		F8FA24C427610056004B8D2D /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		F8FA24C627610095004B8D2D /* Doc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doc.swift; sourceTree = "<group>"; };
@@ -219,6 +256,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F81C7086276DA5A600D52434 /* FRAuthenticator in Frameworks */,
+				F81C708A276DA5A600D52434 /* FRFacebookSignIn in Frameworks */,
+				F81C708C276DA5A600D52434 /* FRProximity in Frameworks */,
+				F81C7084276DA5A600D52434 /* FRAuth in Frameworks */,
+				F81C708E276DA5A600D52434 /* FRUI in Frameworks */,
+				F80F0CC0276DA31800784AFC /* Kingfisher in Frameworks */,
+				F81C7088276DA5A600D52434 /* FRCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +306,7 @@
 		F886EDF1275F2C8D002B1774 /* AllSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F8D66007276CC62400A00606 /* NextGenTry */,
 				F886EDF2275F2C8D002B1774 /* AllSwiftUIApp.swift */,
 				F886EDF4275F2C8D002B1774 /* ContentView.swift */,
 				F893F98627678C7800C2635C /* Setting */,
@@ -303,12 +348,15 @@
 		F893F8DB2766503D00C2635C /* PokeMaster */ = {
 			isa = PBXGroup;
 			children = (
+				F8D6600A276CCB8200A00606 /* Networking */,
+				F8D66005276C649400A00606 /* UI */,
+				F8D66002276C613800A00606 /* FIleIO */,
 				F893F8E52766514500C2635C /* JSON */,
 				F893F9272766514500C2635C /* Model */,
 				F893F9302766514500C2635C /* Utils */,
-				F893F8DD276650E100C2635C /* PokemonInfoRow.swift */,
-				F893F98227677F1D00C2635C /* PokemonList.swift */,
-				F893F9842767802A00C2635C /* PokemonInfoPanel.swift */,
+				F87A017D276B8C9500D13197 /* Store.swift */,
+				F87A0181276B944F00D13197 /* AppAction.swift */,
+				F87A0187276B99CF00D13197 /* AppCommand.swift */,
 			);
 			path = PokeMaster;
 			sourceTree = "<group>";
@@ -316,9 +364,7 @@
 		F893F8DC2766504300C2635C /* Caculator */ = {
 			isa = PBXGroup;
 			children = (
-				F8D81751275FB60D0044E115 /* CalculatorButton.swift */,
-				F8D81755275FBAC80044E115 /* CalculatorButtonRow.swift */,
-				F8D81757275FBBB70044E115 /* CalculatorButtonPad.swift */,
+				F8D66006276C65A200A00606 /* UI */,
 				F8FA24C427610056004B8D2D /* CalculatorBrain.swift */,
 				F8D81753275FB77F0044E115 /* CalculatorButtonItem.swift */,
 				F8FA24C827610B63004B8D2D /* CalculatorModel.swift */,
@@ -425,6 +471,8 @@
 			children = (
 				F893F9282766514500C2635C /* ViewModel */,
 				F893F92B2766514500C2635C /* DataModel */,
+				F87A017F276B92AB00D13197 /* User.swift */,
+				F8D66008276CCB2D00A00606 /* AppState.swift */,
 			);
 			name = Model;
 			path = "../../../../书籍/iOS/objccn-swift-ui/eBook.source/4.SwiftUI-in-Real-World/PokeMaster-Starter/PokeMaster/Model";
@@ -456,6 +504,8 @@
 				F893F9312766514500C2635C /* FileHelper.swift */,
 				F893F9322766514500C2635C /* Sample.swift */,
 				F893F9332766514500C2635C /* Helpers.swift */,
+				F87A0185276B98D400D13197 /* AppError.swift */,
+				F8B1881B276F939500386A1B /* OverLayerSheet.swift */,
 			);
 			name = Utils;
 			path = "../../../../书籍/iOS/objccn-swift-ui/eBook.source/4.SwiftUI-in-Real-World/PokeMaster-Starter/PokeMaster/Utils";
@@ -468,6 +518,55 @@
 				F893F98927678C9500C2635C /* Settings.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		F8D66002276C613800A00606 /* FIleIO */ = {
+			isa = PBXGroup;
+			children = (
+				F8D66003276C615800A00606 /* FileStorage.swift */,
+			);
+			path = FIleIO;
+			sourceTree = "<group>";
+		};
+		F8D66005276C649400A00606 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F893F8DD276650E100C2635C /* PokemonInfoRow.swift */,
+				F893F98227677F1D00C2635C /* PokemonList.swift */,
+				F893F9842767802A00C2635C /* PokemonInfoPanel.swift */,
+				F8D9B738276A4B8700A880C6 /* MainTab.swift */,
+				F8D83DD62771A86600B3F99C /* SafariView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F8D66006276C65A200A00606 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F8D81751275FB60D0044E115 /* CalculatorButton.swift */,
+				F8D81755275FBAC80044E115 /* CalculatorButtonRow.swift */,
+				F8D81757275FBBB70044E115 /* CalculatorButtonPad.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F8D66007276CC62400A00606 /* NextGenTry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NextGenTry;
+			sourceTree = "<group>";
+		};
+		F8D6600A276CCB8200A00606 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F87A0183276B988A00D13197 /* LoginRequest.swift */,
+				F8D6600B276CCBA400A00606 /* EmailCheckingRequest.swift */,
+				F8D6600D276CD7A600A00606 /* LoadPokemonRequest.swift */,
+				F81C708F276DC7A400D52434 /* RegisterRequest.swift */,
+				F8B1881D277033FA00386A1B /* LoadAbilityRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -486,6 +585,15 @@
 			dependencies = (
 			);
 			name = AllSwiftUI;
+			packageProductDependencies = (
+				F80F0CBF276DA31800784AFC /* Kingfisher */,
+				F81C7083276DA5A600D52434 /* FRAuth */,
+				F81C7085276DA5A600D52434 /* FRAuthenticator */,
+				F81C7087276DA5A600D52434 /* FRCore */,
+				F81C7089276DA5A600D52434 /* FRFacebookSignIn */,
+				F81C708B276DA5A600D52434 /* FRProximity */,
+				F81C708D276DA5A600D52434 /* FRUI */,
+			);
 			productName = AllSwiftUI;
 			productReference = F886EDEF275F2C8D002B1774 /* AllSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -558,6 +666,10 @@
 				Base,
 			);
 			mainGroup = F886EDE6275F2C8D002B1774;
+			packageReferences = (
+				F80F0CBE276DA31800784AFC /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */,
+			);
 			productRefGroup = F886EDF0275F2C8D002B1774 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -662,18 +774,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D6600C276CCBA400A00606 /* EmailCheckingRequest.swift in Sources */,
 				F8FA24C527610056004B8D2D /* CalculatorBrain.swift in Sources */,
+				F81C7090276DC7A400D52434 /* RegisterRequest.swift in Sources */,
 				F893F93C2766527600C2635C /* Helpers.swift in Sources */,
 				F886EDF5275F2C8D002B1774 /* ContentView.swift in Sources */,
+				F87A0184276B988A00D13197 /* LoginRequest.swift in Sources */,
 				F8FA24C727610095004B8D2D /* Doc.swift in Sources */,
 				F8D81752275FB60D0044E115 /* CalculatorButton.swift in Sources */,
 				F893F8DE276650E100C2635C /* PokemonInfoRow.swift in Sources */,
 				F893F93B2766527600C2635C /* FileHelper.swift in Sources */,
+				F8B1881C276F939500386A1B /* OverLayerSheet.swift in Sources */,
+				F8D6600E276CD7A600A00606 /* LoadPokemonRequest.swift in Sources */,
 				F8D81754275FB77F0044E115 /* CalculatorButtonItem.swift in Sources */,
 				F893F98A27678C9500C2635C /* Settings.swift in Sources */,
 				F893F9392766518300C2635C /* Ability.swift in Sources */,
+				F87A0188276B99CF00D13197 /* AppCommand.swift in Sources */,
 				F893F98327677F1D00C2635C /* PokemonList.swift in Sources */,
 				F893F9382766518300C2635C /* Language.swift in Sources */,
+				F87A0186276B98D400D13197 /* AppError.swift in Sources */,
 				F8DCF1832768F001009A7F3F /* CombinePlayground.swift in Sources */,
 				F886EDF3275F2C8D002B1774 /* AllSwiftUIApp.swift in Sources */,
 				F893F93A2766527600C2635C /* Sample.swift in Sources */,
@@ -682,10 +801,18 @@
 				F893F9362766518300C2635C /* PokemonSpecies.swift in Sources */,
 				F8FA24C927610B63004B8D2D /* CalculatorModel.swift in Sources */,
 				F8D81756275FBAC80044E115 /* CalculatorButtonRow.swift in Sources */,
+				F8D66009276CCB2D00A00606 /* AppState.swift in Sources */,
+				F8D83DD72771A86600B3F99C /* SafariView.swift in Sources */,
+				F8D66004276C615800A00606 /* FileStorage.swift in Sources */,
+				F87A0180276B92AB00D13197 /* User.swift in Sources */,
 				F8D81758275FBBB70044E115 /* CalculatorButtonPad.swift in Sources */,
+				F87A0182276B944F00D13197 /* AppAction.swift in Sources */,
 				F893F9352766517F00C2635C /* AbilityViewModel.swift in Sources */,
 				F893F9852767802A00C2635C /* PokemonInfoPanel.swift in Sources */,
+				F8B1881E277033FA00386A1B /* LoadAbilityRequest.swift in Sources */,
 				F893F98827678C8A00C2635C /* SettingView.swift in Sources */,
+				F87A017E276B8C9500D13197 /* Store.swift in Sources */,
+				F8D9B739276A4B8700A880C6 /* MainTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1026,6 +1153,63 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F80F0CBE276DA31800784AFC /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ForgeRock/forgerock-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F80F0CBF276DA31800784AFC /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F80F0CBE276DA31800784AFC /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F81C7083276DA5A600D52434 /* FRAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRAuth;
+		};
+		F81C7085276DA5A600D52434 /* FRAuthenticator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRAuthenticator;
+		};
+		F81C7087276DA5A600D52434 /* FRCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRCore;
+		};
+		F81C7089276DA5A600D52434 /* FRFacebookSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRFacebookSignIn;
+		};
+		F81C708B276DA5A600D52434 /* FRProximity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRProximity;
+		};
+		F81C708D276DA5A600D52434 /* FRUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F81C7082276DA5A600D52434 /* XCRemoteSwiftPackageReference "forgerock-ios-sdk" */;
+			productName = FRUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F886EDE7275F2C8D002B1774 /* Project object */;
 }

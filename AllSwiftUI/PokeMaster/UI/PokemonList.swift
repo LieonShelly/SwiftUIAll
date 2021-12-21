@@ -53,6 +53,8 @@ struct PokemonList: View {
     @EnvironmentObject
     var store: Store
     
+    var pokemonList: AppState.PokemonList { store.appState.pokemonList }
+    
     var body: some View {
         ScrollView {
             LazyVStack {
@@ -60,7 +62,7 @@ struct PokemonList: View {
                 ForEach(store.appState.pokemonList.allPokemonsByID) {pokemon in
                     PokemonInfoRow(
                         model: pokemon,
-                        expanded: store.appState.pokemonList.expandingIndex == pokemon.id
+                        expanded: self.pokemonList.selectionState.isExpanding(pokemon.id)
                     )
                         .onTapGesture {
                             withAnimation(

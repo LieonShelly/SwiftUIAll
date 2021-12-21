@@ -50,10 +50,23 @@ struct PokemonInfoRow: View {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
                 }
-                Button(action: {}) {
-                    Image(systemName: "info.circle")
-                        .modifier(ToolButtonModifier())
-                }
+                NavigationLink(
+                    destination:
+                        SafariView(url: model.detailPageURL) {
+                            self.store.dispatch(.closeSafariView)
+                        }
+                        .navigationBarTitle(
+                            Text(model.name),
+                            displayMode: .inline
+                        ),
+                    isActive: expanded ?
+                    $store.appState.pokemonList.isSFViewActive :
+                            .constant(false),
+                    label: {
+                                Image(systemName: "info.circle")
+                                    .modifier(ToolButtonModifier())
+                            })
+
             }
             .padding(.bottom, 12)
             .opacity(expanded ? 1 : 0)
